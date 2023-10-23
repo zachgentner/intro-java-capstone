@@ -20,7 +20,8 @@ public class UI {
     // Greets the user when they initially run the program.
     private static void welcomeMessage() {
         System.out.println("Welcome to the reading speed assessment program!\n");
-        System.out.println("Instructions for this program can be viewed by typing 'help'.\n");
+        System.out.println("Instructions for this program can be viewed by typing 'help'.");
+        System.out.println("If you have not yet taken an assessment, please type 'test'.\n");
     }
 
     // Acknowledges the user when they elect to end the program.
@@ -65,7 +66,8 @@ public class UI {
 
         // Provides the user with their current reading speed.
         else if (input.equals("score") || input.equals("result") || input.equals("wpm")) {
-            System.out.println("\nYour reading speed is " + Assessment.loadWPM() + " (WPM) words per minute.\n");
+            System.out.println("\nYour reading speed is " + Assessment.loadWPM() + " (WPM) words per minute.");
+            System.out.println("Compared to everyone else, you are " + Utility.getSpeedLevel(Assessment.loadWPM()) + " reader.\n");
             System.out.println("It would take you roughly this long to read texts of various sizes.\n");
             Utility.timeBySpeed(Assessment.loadWPM());
             System.out.println("");

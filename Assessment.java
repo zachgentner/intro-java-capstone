@@ -45,7 +45,8 @@ public class Assessment {
                 timer.stop();
                 int wpm = Utility.getWordsPerMinute(Utility.wordsInFile(file), timer.timeInSeconds());
                 saveWPM(wpm);
-                System.out.println("\nYour reading speed is " + wpm + " (WPM) words per minute.\n");
+                System.out.println("\nYour reading speed is " + wpm + " (WPM) words per minute.");
+                System.out.println("You are " + Utility.getSpeedLevel(Assessment.loadWPM()) + " reader.\n");
                 running = false;
             }
         } catch (Exception e) {

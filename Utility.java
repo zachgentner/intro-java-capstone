@@ -20,7 +20,7 @@ public class Utility {
     
     // Returns a plain English representation of the total time a specific text would take to read.
     public static void timeToRead(int words, int speed) {
-        if (speed > 0 && words > 0) {
+        if (speed > 0) {
             int minutes = words / speed;
     
             if (minutes < 1) {
@@ -64,5 +64,18 @@ public class Utility {
           System.out.println("File not found: " + file.getName());
         }
         return count;
+    }
+
+    // Returns a string value for the 'level' of reading speed.
+    public static String getSpeedLevel(int wpm) {
+        if (wpm >= 600) {
+            return "a professional";
+        } else if (wpm >= 400) {
+            return "a fast";
+        } else if (wpm >= 250) {
+            return "an average";
+        } else {
+            return "a slow";
+        }
     }
 }
